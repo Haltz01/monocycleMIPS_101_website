@@ -1,0 +1,20 @@
+.mainContainerNavbar {
+    height: 9vh;
+    font-size: 18px;
+}
+
+.navbarBrand {
+    font-weight: 700;
+    font-size: 22px;
+    color: rgba(233, 198, 0, 0.993) !important;
+}
+
+.navbarItem {
+    background-color: white;
+    transition-duration: 0.3s;
+}
+
+.navbarItem:hover {
+    background-color: rgba(255, 219, 59, 0.979);;
+    transition-duration: 0.3s;
+}

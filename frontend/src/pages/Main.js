@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // useState -> usado para ter váriaveis que vão ser manipuladas pelos componentes
 // import { Link } from 'react-router-dom';
 import './Main.css';
+
 import Navbar from './Navbar.js';
 import Footer from './Footer.js';
 
@@ -23,38 +24,49 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                 {/* <Link to="/">
                     <img src={logo} alt="TinDev Logo" />
                 </Link> */}
-                <div className="row pt-3">
-                    <div className="container-fluid d-flex flex-column justify-content-center align-items-center py-4">
-                        <h1 className="py-2"> Organização e arquitetura de computadores </h1>
-                        <h3 className="py-2"> Aprenda aqui o básico sobre arquiteturas RISC, CISC e, em especial, MIPS.
-                            <br/> Cloking, componentes da arquitetura, caminho de dados. operações e mais! </h3>
+                <div className="row">
+                    <div className="firstRowContainer container-fluid d-flex flex-column justify-content-center align-items-center py-4">
+                        <h1 className="mainTitle"> Organização e arquitetura de computadores </h1>
+                        <h3 className="mainSubtitle w-75 text-center"> Aprenda aqui o básico sobre arquiteturas RISC, CISC e, em especial, <b>MIPS</b>. Cloking, componentes da arquitetura, caminho de dados, operações e mais! </h3>
                     </div>
                 </div>
-                <div className="row d-flex flex-row border-top border-bottom py-4">
-                    <div className="col d-flex justify-content-center align-items-center">
+                <div className="row d-flex flex-row py-4">
+                    <div className="mainIcon col d-flex flex-column justify-content-center align-items-center">
                         <Link to="#tipos_arquitetura" className="w-75"> 
-                            <img src={testeImg} className="img-fluid border shadow-sm rounded-pill" alt="Imagem de teste" /> 
+                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
                         </Link>
+                        <div className="mainIconsDescription container-fluid text-center mt-2">
+                            teste testeteste testeteste testeteste testeteste testeteste testeteste testeteste testeteste teste
+                        </div>
                     </div>
-                    <div className="col d-flex justify-content-center align-items-center">
+                    <div className="mainIcon col d-flex flex-column justify-content-center align-items-center">
                         <Link to="#componentes_MIPS" className="w-75"> 
-                            <img src={testeImg} className="img-fluid border shadow-sm rounded-pill" alt="Imagem de teste" /> 
+                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
                         </Link>
+                        <div className="mainIconsDescription container-fluid text-center mt-2">
+                            steste testeteste testeteste testeteste testeteste testeteste testeteste testeteste testeteste teste
+                        </div>
                     </div>
-                    <div className="col d-flex justify-content-center align-items-center">
+                    <div className="mainIcon col d-flex flex-column justify-content-center align-items-center">
                         <Link to="#instrucoes" className="w-75"> 
-                            <img src={testeImg} className="img-fluid border shadow-sm rounded-pill" alt="Imagem de teste" /> 
+                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
                         </Link>
+                        <div className="mainIconsDescription container-fluid text-center mt-2">
+                            teste testeteste testeteste testeteste testeteste testeteste testeteste testeteste testeteste teste
+                        </div>
                     </div>
-                    <div className="col d-flex justify-content-center align-items-center">
+                    <div className="mainIcon col d-flex flex-column justify-content-center align-items-center">
                         <Link to="#caminho_dados" className="w-75"> 
-                            <img src={testeImg} className="img-fluid border shadow-sm rounded-pill" alt="Imagem de teste" /> 
+                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
                         </Link>
+                        <div className="mainIconsDescription container-fluid text-center mt-2">
+                            teste testeteste testeteste testeteste testeteste testeteste testeteste testeteste testeteste teste
+                        </div>
                     </div>
                 </div>
                 <div className="row py-4">
                     <div className="container-fluid d-flex justify-content-center align-items-center">
-                        <h1 href="#tipos_arquitetura"> Tipos de arquitetura </h1>
+                        <h1 href="#tipos_arquitetura" className="mainSubjectTitle"> Tipos de arquitetura </h1>
                     </div>
                     <div className="container-fluid">
                         <p>
@@ -67,7 +79,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                 </div>
                 <div className="row py-4">
                     <div className="container-fluid d-flex justify-content-center align-items-center">
-                        <h1 href="#componentes_MIPS"> Componentes da arquitetura MIPS </h1>
+                        <h1 href="#componentes_MIPS" className="mainSubjectTitle"> Componentes da arquitetura MIPS </h1>
                     </div>
                     <div className="container-fluid">
                         <p>
@@ -80,7 +92,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                 </div>
                 <div className="row py-4">
                     <div className="container-fluid d-flex justify-content-center align-items-center">
-                        <h1 href="#instrucoes"> Tipos e conjuntos de instruções </h1>
+                        <h1 href="#instrucoes" className="mainSubjectTitle"> Tipos e conjuntos de instruções </h1>
                     </div>
                     <div className="container-fluid">
                         <p>
@@ -93,7 +105,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                 </div>
                 <div className="row py-4">
                     <div className="container-fluid d-flex justify-content-center align-items-center">
-                        <h1 href="#caminho_dados"> Caminho dos dados </h1>
+                        <h1 href="#caminho_dados" className="mainSubjectTitle"> Caminho dos dados </h1>
                     </div>
                     <div className="container-fluid">
                         <p>
