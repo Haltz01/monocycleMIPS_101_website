@@ -15,6 +15,7 @@
 
 .mainIcon {
     transition-duration: 0.3s;
+    cursor: pointer;
 }
 
 .mainIcon:hover {
@@ -29,4 +30,8 @@
 
 .mainSubjectTitle {
     font-weight: 700;
+}
+
+.mainSubjectText {
+    
 }

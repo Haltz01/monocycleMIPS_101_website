@@ -2,12 +2,12 @@ import React from "react";
 
 export default function Footer() {
     return (
-        <footer class="page-footer font-small indigo">
-        <div class="container text-center text-md-left">
-            <div class="row">
-                <div class="col-md-3 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                    <ul class="list-unstyled">
+        <footer className="page-footer font-small indigo">
+        <div className="container text-center text-md-left">
+            <div className="row">
+                <div className="col-md-3 mx-auto">
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul className="list-unstyled">
                         <li>
                             <a href="#!">Very long link 1</a>
                         </li>
@@ -23,11 +23,11 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                <hr class="clearfix w-100 d-md-none" />
+                <hr className="clearfix w-100 d-md-none" />
 
-                <div class="col-md-3 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                    <ul class="list-unstyled">
+                <div className="col-md-3 mx-auto">
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul className="list-unstyled">
                         <li>
                             <a href="#!">Link 1</a>
                         </li>
@@ -43,11 +43,11 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                <hr class="clearfix w-100 d-md-none" />
+                <hr className="clearfix w-100 d-md-none" />
 
-                <div class="col-md-3 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                    <ul class="list-unstyled">
+                <div className="col-md-3 mx-auto">
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul className="list-unstyled">
                         <li>
                             <a href="#!">Link 1</a>
                         </li>
@@ -63,11 +63,11 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                <hr class="clearfix w-100 d-md-none" />
+                <hr className="clearfix w-100 d-md-none" />
 
-                <div class="col-md-3 mx-auto">
-                    <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                    <ul class="list-unstyled">
+                <div className="col-md-3 mx-auto">
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <ul className="list-unstyled">
                         <li>
                             <a href="#!">Link 1</a>
                         </li>
@@ -85,7 +85,7 @@ export default function Footer() {
             </div>
         </div>
 
-        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+        <div className="footer-copyright text-center py-3">© 2020 Copyright:
             <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
     </footer>
