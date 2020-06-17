@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -6,19 +7,19 @@ export default function Footer() {
         <div className="container text-center text-md-left">
             <div className="row">
                 <div className="col-md-3 mx-auto">
-                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links - Universidade </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!">Very long link 1</a>
+                            <Link to="#!">Link 1</Link>
                         </li>
                         <li>
-                            <a href="#!">Very long link 2</a>
+                            <Link to="#!">Link 2</Link>
                         </li>
                         <li>
-                            <a href="#!">Very long link 3</a>
+                            <Link to="#!">Link 3</Link>
                         </li>
                         <li>
-                            <a href="#!">Very long link 4</a>
+                            <Link to="#!">Link 4</Link>
                         </li>
                     </ul>
                 </div>
@@ -26,19 +27,19 @@ export default function Footer() {
                 <hr className="clearfix w-100 d-md-none" />
 
                 <div className="col-md-3 mx-auto">
-                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Emails </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <Link to="#!">Link 1</Link>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <Link to="#!">Link 2</Link>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <Link to="#!">Link 3</Link>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
+                            <Link to="#!">Link 4</Link>
                         </li>
                     </ul>
                 </div>
@@ -46,39 +47,19 @@ export default function Footer() {
                 <hr className="clearfix w-100 d-md-none" />
 
                 <div className="col-md-3 mx-auto">
-                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
+                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Githubs </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <Link to="#!">Lucas Yuji Matubara</Link>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <Link to="https://github.com/Haltz01"> Pedro Guerra Lourenço</Link>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <Link to="#!">Pedro Henrique M. Cisdeli</Link>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <hr className="clearfix w-100 d-md-none" />
-
-                <div className="col-md-3 mx-auto">
-                    <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-                    <ul className="list-unstyled">
-                        <li>
-                            <a href="#!">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
+                            <Link to="#!">Vitor Souza Amim</Link>
                         </li>
                     </ul>
                 </div>
@@ -86,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-copyright text-center py-3">© 2020 Copyright:
-            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+            <Link to="https://mdbootstrap.com/"> MDBootstrap.com</Link>
         </div>
     </footer>
     );
