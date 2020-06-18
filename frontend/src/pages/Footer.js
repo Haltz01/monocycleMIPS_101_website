@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -10,16 +9,16 @@ export default function Footer() {
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links - Universidade </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <Link to="#!">Link 1</Link>
+                            <a href="#!">Link 1</a>
                         </li>
                         <li>
-                            <Link to="#!">Link 2</Link>
+                            <a href="#!">Link 2</a>
                         </li>
                         <li>
-                            <Link to="#!">Link 3</Link>
+                            <a href="#!">Link 3</a>
                         </li>
                         <li>
-                            <Link to="#!">Link 4</Link>
+                            <a href="#!">Link 4</a>
                         </li>
                     </ul>
                 </div>
@@ -30,16 +29,16 @@ export default function Footer() {
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Emails </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <Link to="#!">Link 1</Link>
+                            <a href="#!">Link 1</a>
                         </li>
                         <li>
-                            <Link to="#!">Link 2</Link>
+                            <a href="#!">Link 2</a>
                         </li>
                         <li>
-                            <Link to="#!">Link 3</Link>
+                            <a href="#!">Link 3</a>
                         </li>
                         <li>
-                            <Link to="#!">Link 4</Link>
+                            <a href="#!">Link 4</a>
                         </li>
                     </ul>
                 </div>
@@ -50,16 +49,16 @@ export default function Footer() {
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Githubs </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <Link to="#!">Lucas Yuji Matubara</Link>
+                            <a href="#!" target="__blank">Lucas Yuji Matubara</a>
                         </li>
                         <li>
-                            <Link to="https://github.com/Haltz01"> Pedro Guerra Lourenço</Link>
+                            <a href="https://github.com/Haltz01" target="__blank"> Pedro Guerra Lourenço</a>
                         </li>
                         <li>
-                            <Link to="#!">Pedro Henrique M. Cisdeli</Link>
+                            <a href="https://github.com/sprmbng" target="__blank">Pedro Henrique M. Cisdeli</a>
                         </li>
                         <li>
-                            <Link to="#!">Vitor Souza Amim</Link>
+                            <a href="#!" target="__blank">Vitor Souza Amim</a>
                         </li>
                     </ul>
                 </div>
@@ -67,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-copyright text-center py-3">© 2020 Copyright:
-            <Link to="https://mdbootstrap.com/"> MDBootstrap.com</Link>
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
         </div>
     </footer>
     );

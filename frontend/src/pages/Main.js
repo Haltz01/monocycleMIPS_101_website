@@ -1,6 +1,5 @@
 import React from 'react'; // useEffect> para chamada a API assim que o componente for exibido na tela
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
 import ReactScroll from "react-scroll";
 // useState -> usado para ter váriaveis que vão ser manipuladas pelos componentes
 import './Main.css';
@@ -9,7 +8,18 @@ import Navbar from './Navbar.js';
 import Footer from './Footer.js';
 
 import testeImg from '../assets/teste.jpg';
-// import bancoRegistradores from '../assets/bancoRegistradores.jpg';
+import bancoRegistradores from '../assets/bancoRegistradores.png';
+import bancoRegistradoresSimples from '../assets/bancoRegistradoresSimples.png';
+import buscaInstrucoes from '../assets/buscaInstrucoes.png';
+import datapathAdd from '../assets/datapathAdd.png';
+import instructionAddBits from '../assets/instructionAddBits.png';
+import frequencies from '../assets/frequencies.png';
+import signalEvent from '../assets/signalEvent.png';
+import ULA from '../assets/ULA.png';
+import muxScanner from '../assets/muxScanner.png';
+import muxBase from '../assets/muxBase.png';
+import memoriaDados from '../assets/memoriaDados.png';
+
 
 // import api from '../services/api';
 
@@ -92,7 +102,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                         A medição do clock é feita em Hertz cuja sigla é Hz. Podemos, então, dizer que 100Hz são cem ciclos por segundo, que 1000Hz são mil ciclos por segundo e que 4,80GHz são 4 800 000 000 ciclos por segundo - valor equivalente à frequência do processador Intel Core i7-10700.
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Exemplos de ondas com diferentes frequências - clock" /> 
+                            <img src={frequencies} className="img-fluid shadow rounded w-25" alt="Exemplos de ondas com diferentes frequências - clock" /> 
                         </div>
                         <p>
                         Um grande problema da arquitetura monociclo é que ela trabalha com base na velocidade da instrução mais demorada, ou seja, há casos em que as instruções (mais simples) são finalizadas e então há perda de tempo, pois a operação mais lenta é a que define o tempo de clock dessa arquitetura. 
@@ -101,7 +111,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                             É necessário lembrar também que as operações são feitas na troca do sinal de clock, quando ocorre o <i>falling edge</i> ou o <i>rising edge</i> (figura a seguir).
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Exemplos de ondas com diferentes frequências - clock" /> 
+                            <img src={signalEvent} className="img-fluid shadow rounded w-50" alt="Falling edge e rising edge" /> 
                         </div>
                     </div>
                 </div>
@@ -117,13 +127,13 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                             O <b>Banco de Registradores</b>, com o nome sugere, é uma unidade que contém todos os registradores a serem utilizados. Uma forma de entender a disposição dos registradores nesse banco é a partir da imagem abaixo:
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho lógico do banco de registradores" /> 
+                            <img src={bancoRegistradores} className="img-fluid shadow rounded w-75" alt="Desenho lógico do banco de registradores" /> 
                         </div>
                         <p>
                             Porém, usaremos uma imagem mais simplificada para explicar sobre o banco de registradores:
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho simplificado do banco de registradores" /> 
+                            <img src={bancoRegistradoresSimples} className="img-fluid shadow rounded w-75" alt="Desenho simplificado do banco de registradores" /> 
                         </div>
                         <p>
                             Duas são as entradas nessa implementação: <i>Read Register One</i> e <i>Read Register Two</i>. Elas recebem os endereços dos registradores que serão utilizados durante a execução de algum comando. Por exemplo, em um comando de adição (add $s0, $s1, $s2) são passados, ao banco de registradores, os endereços de <i>$s1</i> e <i>$s2</i> - para <i>Read Register One</i> e <i>Read Register Two</i> respectivamente. O banco de registradores lerá os endereços e então buscará os valores guardados nesses registradores para passar a <i>Read Data One</i> e <i>Read Data Two</i>.
@@ -139,7 +149,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                             A <b>Unidade Lógica e Aritmética</b> (ULA ou, em inglês, ALU) é responsável pelas operações de soma, subtração, divisão, entre outros. De forma mais abrangente, ela é responsável por operações aritméticas e lógicas (no geral, comparações) como já demonstra seu nome. Possui dois valores de entrada e duas saídas (uma para o resultado da operação aritmética e outra para condições de desvio). Quando a operação enviada à ULA for de desvio, como um <i>branch</i> por exemplo, basta dizer se a condição foi satisfeita ou não. Para isso, existe a saída <i>Zero</i>, que assume o valor 1 caso a condição que está sendo avaliada for satisfeita e, caso contrário, assume valor 0.
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                            <img src={ULA} className="img-fluid shadow rounded w-25" alt="Desenho da ULA com suas entrada e saídas" /> 
                         </div>
 
                         {/* ---------------------------- PC - PROGRAM COUNTER ---------------------------- */}
@@ -148,22 +158,22 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                             As instruções na arquitetura MIPS tem 32 bits (ou seja, 4 bytes), e como elas são organizadas sequencialmente na memória, o que ocorre é que após a interpretação de uma, basta andar 4 bytes na memória para começar a executar a próxima instrução. Tendo isso em vista, há o <b><i>Program Counter</i></b> (PC; contador de programa), responsável por indicar em que endereço de memória está a instrução atual, além de “andar” pela memória a fim de dar continuidade ao programa (indo para o endereço da próxima instrução que deve ser executada). O contador de programa é a unidade apresentada abaixo.
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                            <img src={buscaInstrucoes} className="img-fluid shadow rounded w-50" alt="Busca de instruções: contador de programa e memória de instruções" /> 
                         </div>
                         <p>
-                            O endereço da instrução é enviado ao <i>Instruction Memory</i> (IM), e o endereço contido em PC é atualizado para PC + 4 (que é o endereço da próxima instrução).
+                            O endereço da instrução é enviado ao <i>Instruction Memory</i> (IM), e o endereço contido em PC é atualizado para PC + 4 (que é o endereço da próxima instrução). A <i>Instruction Memory</i> fica responsável por buscar a instrução na memória (a partir do endereço contido no contador de programa) e passar para os outros componentes.
                         </p>
 
                         {/* ---------------------------- MULTIPLEXADORES - MUX ---------------------------- */}
                         <h3>Multiplexadores</h3> 
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                            <img src={muxScanner} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
                         </div>
                         <p>
                             Os <b>multiplexadores</b> (MUX) são sistemas digitais que possuem múltiplas entradas de dados, uma entrada de controle e uma saída de dados. O sinal da entrada de controle define qual das entradas será transmitida à saída. Em outras palavras, com um MUX é possível selecionar qual entrada será a saída.
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                            <img src={muxBase} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com mais detalhes" /> 
                         </div>
                         <p>
                             Em relação à arquitetura MIPS, os multiplexadores são necessários quando precisamos escolher o dado de entrada em alguns dos componentes. Na imagem acima temos exemplos: escolher se o PC será apenas incrementado em 4 (para uma próxima operação) ou se ele será modificado por uma instrução de desvio; escolher se a entrada da ULA será um valor imediato ou um valor vindo de um registrador; ou ainda escolher se o valor a ser escrito no registrador é o resultado de uma operação da ULA ou de uma busca na memória.
@@ -175,7 +185,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                             A <b><i>Data Memory</i></b> é um componente necessário quando buscamos ou escrevemos algo na memória em função de seu endereço, como em uma operação de <i>load word</i> (lw) ou <i>store word</i> (sw). Ela é responsável por recuperar ou armazenar dados presentes em certos endereços de memória, os quais passados como entrada para ela. Caso haja saída (sinal de controle <i>MemRead</i> é 1), ela será o dado buscado na memória por esse componente.
                         </p>
                         <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                            <img src={memoriaDados} className="img-fluid shadow rounded w-25" alt="Componente da memória de dados (data memory)" /> 
                         </div>
 
                         {/* ---------------------------- UNIDADE DE CONTROLE ---------------------------- */}
@@ -201,7 +211,9 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                         </div>
                         <p>
                             Um exemplo simples para demonstrar o funcionamento da unidade de controle seria: <b>add $s1 $s2 $s3</b>. Instrução do tipo R que gera os seguintes sinais:
-                            <br/> INSERIR AQUI A ESTRUTURA DA INSTRUÇAO!!!
+                            <div className="d-flex justify-content-center my-3">
+                                <img src={instructionAddBits} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                            </div>
                         </p>
                         <div className="table-responsive">
                             <table className="table table-hover text-center">
@@ -256,8 +268,8 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                                 </tbody>
                             </table>
                         </div>
-                        <div className="d-flex justify-content-center my-3">
-                            <img src={testeImg} className="img-fluid w-50" alt="Caminho de dados de exemplo para explicar os sinais de controle" /> 
+                        <div className="d-flex justify-content-center mt-3">
+                            <img src={datapathAdd} className="img-fluid w-75" alt="Caminho de dados de exemplo para explicar os sinais de controle" /> 
                         </div>
                     </div>
                 </div>
