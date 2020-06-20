@@ -1,5 +1,5 @@
 .mainContainerNavbar {
-    height: 9vh;
+    height: 70px;
     font-size: 18px;
 }
 
@@ -15,6 +15,21 @@
 }
 
 .navbarItem:hover {
-    background-color: rgba(255, 219, 59, 0.979);;
+    background-color: rgba(255, 219, 59, 0.979);
     transition-duration: 0.3s;
+}
+
+.dropdownDiv {
+    width: 100%;
+}
+
+.dropdownItem {
+    background-color: white;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.dropdownItem:hover {
+    font-weight: 700;
+    background-color: rgba(255, 232, 131, 0.979);
 }

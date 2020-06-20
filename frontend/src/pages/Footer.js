@@ -9,36 +9,31 @@ export default function Footer() {
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4">Links - Universidade </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="http://www.saocarlos.usp.br/"> Portal USP São Carlos </a>
                         </li>
+                        <br/>
                         <li>
-                            <a href="#!">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!">Link 4</a>
+                            <a href="https://www.icmc.usp.br/"> ICMC - Instituto De Ciências Matemáticas e de Computação </a>
                         </li>
                     </ul>
                 </div>
 
                 <hr className="clearfix w-100 d-md-none" />
 
-                <div className="col-md-3 mx-auto">
+                <div className="col-md-5 mx-auto">
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Emails </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!">Link 1</a>
+                            <a href="#!">Lucas Yuji: </a>
                         </li>
                         <li>
-                            <a href="#!">Link 2</a>
+                            <a href="#!">Pedro Guerra: pedro-x-guerra@hotmail.com</a>
                         </li>
                         <li>
-                            <a href="#!">Link 3</a>
+                            <a href="#!">Pedro Cisdeli: </a>
                         </li>
                         <li>
-                            <a href="#!">Link 4</a>
+                            <a href="#!">Vitor Amim:</a>
                         </li>
                     </ul>
                 </div>
@@ -52,7 +47,7 @@ export default function Footer() {
                             <a href="#!" target="__blank">Lucas Yuji Matubara</a>
                         </li>
                         <li>
-                            <a href="https://github.com/Haltz01" target="__blank"> Pedro Guerra Lourenço</a>
+                            <a href="https://github.com/Haltz01" target="__blank">Pedro Guerra Lourenço</a>
                         </li>
                         <li>
                             <a href="https://github.com/sprmbng" target="__blank">Pedro Henrique M. Cisdeli</a>

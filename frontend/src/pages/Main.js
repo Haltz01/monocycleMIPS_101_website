@@ -19,6 +19,8 @@ import ULA from '../assets/ULA.png';
 import muxScanner from '../assets/muxScanner.png';
 import muxBase from '../assets/muxBase.png';
 import memoriaDados from '../assets/memoriaDados.png';
+import instructionComposition from '../assets/instructionComposition.png';
+import listRegisters from '../assets/listRegisters.png';
 
 
 // import api from '../services/api';
@@ -37,39 +39,39 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                 </Link> */}
                 <div className="row">
                     <div className="firstRowContainer container-fluid d-flex flex-column justify-content-center align-items-center py-4">
-                        <h1 className="mainTitle"> Organização e arquitetura de computadores </h1>
+                        <h1 className="mainTitle text-center"> Organização e arquitetura de computadores </h1>
                         <h3 className="mainSubtitle w-75 text-center"> Aprenda aqui o básico sobre arquiteturas RISC, CISC e, em especial, <b>MIPS</b>. Cloking, componentes da arquitetura, caminho de dados, operações e mais! </h3>
                     </div>
                 </div>
                 <div className="row d-flex flex-row py-4">
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="tipos_arquitetura" spy={true} smooth={true} duration={800} offset={-100} className="w-75"> 
+                        <ReactScroll.Link to="tipos_arquitetura" spy={true} smooth={true} duration={800} offset={-100} className=""> 
                             <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
-                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2">
+                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                                 Seja intruduzido a alguns <b>tipos de arquitetura</b> diferentes e aprenda, também, o básico sobre a arquitetura MIPS.
                             </div>
                         </ReactScroll.Link>
                     </div>
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="componentes_MIPS" spy={true} smooth={true} duration={800} offset={-100} className="w-75"> 
+                        <ReactScroll.Link to="componentes_MIPS" spy={true} smooth={true} duration={800} offset={-100} className=""> 
                             <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
-                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2">
+                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                                 Saiba mais sobre os principais <b>componentes da arquitetura MIPS</b>: banco de registradores, unidade de controle, unidade lógico-aritmética, memória...
                             </div>
                         </ReactScroll.Link>
                     </div>
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="instrucoes" spy={true} smooth={true} duration={800} offset={-100} className="w-75"> 
+                        <ReactScroll.Link to="instrucoes" spy={true} smooth={true} duration={800} offset={-100} className=""> 
                             <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
-                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2">
+                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                             Aprenda sobre os <b>tipos de instruções</b> usados no MIPS. Instruções do tipo I, J e R - junto de exemplos explicativos.
                             </div>
                         </ReactScroll.Link>
                     </div>
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="caminho_dados" spy={true} smooth={true} duration={800} offset={-100} className="w-75"> 
+                        <ReactScroll.Link to="caminho_dados" spy={true} smooth={true} duration={800} offset={-100} className=""> 
                             <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
-                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2">
+                            <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                                 Aprenda o <b>caminho dos dados</b> - incluindo sinais de controle - em instruções de todos os tipos a partir de exemplos!
                             </div>
                         </ReactScroll.Link>
@@ -91,15 +93,15 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                         </p>
 
                         {/* ---------------------------- CLOCKING ---------------------------- */}
-                        <h3> Cloking </h3>
+                        <h3> Clocking </h3>
                         <p>
                             Quando falamos sobre a arquitetura monociclo, estamos nos referindo a uma máquina que faz uma operação por ciclo de clock, em outras palavras, cada instrução é realizada em um único pulso. Portanto, para explicar mais a fundo a arquitetura, será necessário saber um mínimo sobre o clock.
                         </p>
                         <p>
-                        O clock interno do computador é comumente definido como um sinal de sincronismo, isso porque ele é sincronizado por pulso com um oscilador interno, que normalmente é feito de um cristal piezoelétrico. De forma geral, ele é uma unidade básica que ajuda a entender a velocidade do processador (CPU).
+                            O clock interno do computador é comumente definido como um sinal de sincronismo, isso porque ele é sincronizado por pulso com um oscilador interno, que normalmente é feito de um cristal piezoelétrico. De forma geral, ele é uma unidade básica que ajuda a entender a velocidade do processador (CPU).
                         </p>
                         <p>
-                        A medição do clock é feita em Hertz cuja sigla é Hz. Podemos, então, dizer que 100Hz são cem ciclos por segundo, que 1000Hz são mil ciclos por segundo e que 4,80GHz são 4 800 000 000 ciclos por segundo - valor equivalente à frequência do processador Intel Core i7-10700.
+                            A medição do clock é feita em Hertz cuja sigla é Hz. Podemos, então, dizer que 100Hz são cem ciclos por segundo, que 1000Hz são mil ciclos por segundo e que 4,80GHz são 4 800 000 000 ciclos por segundo - valor equivalente à frequência do processador Intel Core i7-10700.
                         </p>
                         <div className="d-flex justify-content-center my-3">
                             <img src={frequencies} className="img-fluid shadow rounded w-25" alt="Exemplos de ondas com diferentes frequências - clock" /> 
@@ -211,10 +213,10 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                         </div>
                         <p>
                             Um exemplo simples para demonstrar o funcionamento da unidade de controle seria: <b>add $s1 $s2 $s3</b>. Instrução do tipo R que gera os seguintes sinais:
-                            <div className="d-flex justify-content-center my-3">
-                                <img src={instructionAddBits} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
-                            </div>
                         </p>
+                        <div className="d-flex justify-content-center my-3">
+                            <img src={instructionAddBits} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
+                        </div>
                         <div className="table-responsive">
                             <table className="table table-hover text-center">
                                 <thead>
@@ -279,11 +281,20 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                     </div>
                     <div className="mainSubjectText container-fluid">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur tortor vitae turpis pulvinar, et rutrum odio sagittis. Maecenas iaculis augue accumsan, scelerisque mauris eu, finibus mauris. Vivamus sagittis ut tortor eu sagittis. Proin elementum tellus eget nibh mattis, vitae euismod orci volutpat. Cras tempor, felis non vehicula cursus, neque velit tempor ligula, ac mollis lacus nibh id risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus eget magna a leo volutpat viverra. Mauris tristique ex in sem molestie feugiat.
+                            Existem três <b>tipos de operações</b> a serem estudadas nessa linguagem. São elas: <i>R-format, I-format e J-format</i>. Cada operação é composta por 32 bits e apresenta um “padrão” de informação diferente nesses 4 bytes.
                         </p>
+                        <div className="d-flex justify-content-center my-3">
+                            <img src={instructionComposition} className="img-fluid shadow rounded w-50" alt="Formato (composição) das instruções R, I e J" /> 
+                        </div>
                         <p>
-                            Aenean euismod tellus eget pellentesque maximus. Pellentesque vestibulum velit vel enim imperdiet, sit amet eleifend nisi imperdiet. Aliquam erat volutpat. Vestibulum vel ultricies urna. Duis ante justo, vehicula non rhoncus non, eleifend et sapien. Praesent in ipsum eget nulla varius dapibus. Suspendisse viverra sem erat, non tristique dui iaculis vitae. Maecenas risus risus, congue nec diam et, lacinia tempor dolor. Ut fringilla sed dui tincidunt scelerisque. Aenean placerat orci eu auctor mattis. Donec rhoncus libero sapien, vitae pharetra elit sagittis at. Ut fermentum condimentum ex, eu pharetra ante rhoncus non. Nunc dapibus velit in dui scelerisque, et molestie dolor imperdiet. Donec convallis luctus velit non lacinia.
+                            O <b>operation code (op)</b> é responsável por identificar a operação. Os valores <b>rs</b>, <b>rt</b>, e <b>rd</b> são endereços de registradores no sistema. Os possíveis registradores que eles representam estão na lista abaixo:
                         </p>
+                        <div className="d-flex justify-content-center my-3">
+                            <img src={listRegisters} className="img-fluid shadow rounded w-50" alt="Lista de registradores a serem usados (MIPS)" /> 
+                        </div>
+                        <p>
+                            <b>Shamt</b> é o valor para operações do tipo <i>shift</i> (deslocamento de bits). O <b>function</b> é necessário em instruções do tipo R para identificar as operações feitas na ULA - assim como faz o <i>operation code</i>. O <b>address</b> e o <b>target address</b> são ambos endereços, a diferença está em seus tamanhos. No caso das instruções do tipo J, ocorre uma operação de <i>shift</i> para poder escrever o endereço (aonde??), resultando em um valor que pode ser maior ao encontrado em instruções do tipo I. O <b>immediate</b> é usado para valores imediatos, ou seja, valores que não precisamos buscar em registradores -  ele é passado direto na instrução, como em li $t0, <b>100</b>.
+                        </p> 
                     </div>
                 </div>
                 <div className="row py-4">
