@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactScroll from "react-scroll";
 import $ from 'jquery';
@@ -26,7 +27,10 @@ import listRegisters from '../assets/listRegisters.png';
 // import api from '../services/api';
 
 export default function Main() { // match é uma propriedade do react-router-dom -> tem os parametros passados para a rota. Ex.: {match.params.id}
+    const [instructionImageName, setInstructionImageName ] = useState("ADD");    
+    
     const scrollTopRef = React.createRef();
+    const datapathImageComponent = React.createRef();
 
     const scrollTop = () => {
         scrollTopRef.current.scrollIntoView({
@@ -34,6 +38,13 @@ export default function Main() { // match é uma propriedade do react-router-dom
           block: 'start',
         });
     }
+
+    useEffect(() => {
+        if (instructionImageName === "ADD" || instructionImageName === "JUMP" || instructionImageName === "BEQ")
+            datapathImageComponent.current.src = "./" + instructionImageName + ".jpg";
+        else
+            datapathImageComponent.current.src = "./ADD.jpg";
+    }, [instructionImageName, datapathImageComponent]);
 
     /* Função que exibe e oculta o botão de voltar ao topo da página */
     $(document).ready(function() {
@@ -49,8 +60,6 @@ export default function Main() { // match é uma propriedade do react-router-dom
         showScrollTopButton();
     });
 
-    const [instructionImageName, setInstructionImageName ] = useState("ADD");
-
     return (
         <div>
             <Helmet>
@@ -63,8 +72,8 @@ export default function Main() { // match é uma propriedade do react-router-dom
             <div className="container bg-white">
                 <div className="row">
                     <div className="firstRowContainer container-fluid d-flex flex-column justify-content-center align-items-center py-5">
-                        <h1 className="mainTitle text-center py-4"> Organização e arquitetura de computadores </h1>
-                        <h3 className="mainSubtitle w-75 text-center py-4"> Aprenda aqui o básico sobre arquiteturas RISC, CISC e, em especial, <b>MIPS</b>. Cloking, componentes da arquitetura, caminho de dados, operações e mais! </h3>
+                        <h1 className="mainTitle text-center py-4"> Organização e arquitetura de computadores: MIPS monocliclo </h1>
+                        <h3 className="mainSubtitle w-75 text-center py-4"> Aprenda aqui o básico sobre arquiteturas RISC e CISC, com o foco em um tipo de arquitetura RISC: o <b>MIPS</b>. Seja introduzido a conceitos como cloking, componentes de arquitetura, caminho de dados, conjunto de instruções, sinais de controle e mais! </h3>
                     </div>
                 </div>
                 <div className="row d-flex flex-row py-4">
@@ -106,9 +115,16 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         <h1 id="tipos_arquitetura" className="mainSubjectTitle"> Tipos de arquitetura </h1>
                     </div>
                     <div className="container-fluid">
-                        
+                        {/* ---------------------------- ARQUITETURAS RISC E CISC ---------------------------- */}
+                        <h3 id="RISC_CISC"> Breve introdução às arquiteturas CISC e RISC </h3>
+                        <p>
+                            A <b>arquitetura CISC</b> (<i>Complex Instruction Set Computer</i>) possui um grande número de modos de endereçamento, instruções complexas e referências a operandos na memória principal. Suas instruções também variam de tamanho, levando a uma maior dificuldade na implementação do pipeline e um menor número de instruções realizadas por ciclo.
+                        </p>
+                        <p>
+                        A <b>arquitetura RISC</b> (<i>Reduced Instruction Set Computer</i>) foi desenvolvida contando com instruções mais simples, poucas formas de endereçamento e apenas poucas operação referenciando a memória principal. Além disso, ela fixa os formatos de instruções em um modelo, permitindo a fácil implementação do pipeline.
+                        </p>
                         {/* ---------------------------- ARQUITETURA MIPS (RISC) ---------------------------- */}
-                        <h3> Arquitetura MIPS </h3>
+                        <h3 id="MIPS"> Arquitetura MIPS </h3>
                         <p>
                             MIPS é o nome de uma arquitetura de processador baseado no uso de registradores. Suas instruções tem à disposição 32 registradores para realizarem operações. Os processadores MIPS são do formato RISC (Reduced Instruction Set Computer), que é conhecido por ter um pequeno conjunto de instruções possíveis para o processador executar. Alguns exemplos de projetos que utilizam arquitetura MIPS são: Nintendo 64, Playstation 2, e roteadores Cisco.
                         </p>
@@ -117,7 +133,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         </p>
 
                         {/* ---------------------------- CLOCKING ---------------------------- */}
-                        <h3> Clocking </h3>
+                        <h3 id="clocking"> Clocking </h3>
                         <p>
                             Quando falamos sobre a arquitetura monociclo, estamos nos referindo a uma máquina que faz uma operação por ciclo de clock, em outras palavras, cada instrução é realizada em um único pulso. Portanto, para explicar mais a fundo a arquitetura, será necessário saber um mínimo sobre o clock.
                         </p>
@@ -148,7 +164,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                     </div>
                     <div className="container-fluid d-flex flex-column justify-content-center">
                         {/* ---------------------------- BANCO DE REGISTRADORES ---------------------------- */}
-                        <h3> Banco de Registradores </h3>
+                        <h3 id="banco_regs"> Banco de Registradores </h3>
                         <p>
                             O <b>Banco de Registradores</b>, com o nome sugere, é uma unidade que contém todos os registradores a serem utilizados. Uma forma de entender a disposição dos registradores nesse banco é a partir da imagem abaixo:
                         </p>
@@ -170,7 +186,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
 
                         {/* ---------------------------- ULA - UNIDADE LÓGICO-ARITMÉTICA ---------------------------- */}
                         {/* FAZER MODIFICAÇẼSS AQUI !!! */}
-                        <h3>Unidade Lógica e Aritmética</h3> 
+                        <h3 id="ULA">Unidade Lógica e Aritmética</h3> 
                         <p>
                             A <b>Unidade Lógica e Aritmética</b> (ULA ou, em inglês, ALU) é responsável pelas operações de soma, subtração, divisão, entre outros. De forma mais abrangente, ela é responsável por operações aritméticas e lógicas (no geral, comparações) como já demonstra seu nome. Possui dois valores de entrada e duas saídas (uma para o resultado da operação aritmética e outra para condições de desvio). Quando a operação enviada à ULA for de desvio, como um <i>branch</i> por exemplo, basta dizer se a condição foi satisfeita ou não. Para isso, existe a saída <i>Zero</i>, que assume o valor 1 caso a condição que está sendo avaliada for satisfeita e, caso contrário, assume valor 0.
                         </p>
@@ -179,7 +195,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         </div>
 
                         {/* ---------------------------- PC - PROGRAM COUNTER ---------------------------- */}
-                        <h3>Contador de Programa</h3> 
+                        <h3 id="program_counter">Contador de Programa</h3> 
                         <p>
                             As instruções na arquitetura MIPS tem 32 bits (ou seja, 4 bytes), e como elas são organizadas sequencialmente na memória, o que ocorre é que após a interpretação de uma, basta andar 4 bytes na memória para começar a executar a próxima instrução. Tendo isso em vista, há o <b><i>Program Counter</i></b> (PC; contador de programa), responsável por indicar em que endereço de memória está a instrução atual, além de “andar” pela memória a fim de dar continuidade ao programa (indo para o endereço da próxima instrução que deve ser executada). O contador de programa é a unidade apresentada abaixo.
                         </p>
@@ -191,7 +207,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         </p>
 
                         {/* ---------------------------- MULTIPLEXADORES - MUX ---------------------------- */}
-                        <h3>Multiplexadores</h3> 
+                        <h3 id="multiplexers">Multiplexadores</h3> 
                         <div className="d-flex justify-content-center my-3">
                             <img src={muxScanner} className="img-fluid shadow rounded w-50" alt="Desenho da ULA com suas entrada e saídas" /> 
                         </div>
@@ -206,7 +222,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         </p>
 
                         {/* ---------------------------- MEMÓRIA DE DADOS ---------------------------- */}
-                        <h3>Memória (de dados)</h3> 
+                        <h3 id="data_memory">Memória (de dados)</h3> 
                         <p>
                             A <b><i>Data Memory</i></b> é um componente necessário quando buscamos ou escrevemos algo na memória em função de seu endereço, como em uma operação de <i>load word</i> (lw) ou <i>store word</i> (sw). Ela é responsável por recuperar ou armazenar dados presentes em certos endereços de memória, os quais passados como entrada para ela. Caso haja saída (sinal de controle <i>MemRead</i> é 1), ela será o dado buscado na memória por esse componente.
                         </p>
@@ -215,10 +231,10 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         </div>
 
                         {/* ---------------------------- UNIDADE DE CONTROLE ---------------------------- */}
-                        {/* FAZER MODIFICAÇẼSS AQUI !!! */}
-                        <h3> Unidade de controle (monociclo)</h3>
+                        {/* FAZER MODIFICAÇÕES AQUI !!! */}
+                        <h3 id="control_unit"> Unidade de controle (monociclo)</h3>
                         <p>
-                            Uma instrução do tipo J não necessita ULA; instruções do tipo I assinalam os mesmos bits de endereço em <i>read register 2</i> e <i>write register</i>; já as de tipo R possuem 3 endereços distintos para cada entrada do banco de registradores. Tendo isso em vista, a <b>Unidade de Controle</b> é o componente responsável por direcionar esses bits recebidos entre os demais componentes da arquitetura de acordo com o tipo da instrução, criando, assim, o caminho de dados correto.
+                            Uma instrução do tipo J não necessita da ULA; instruções do tipo I assinalam os mesmos bits de endereço em <i>read register 2</i> e <i>write register</i>; já as de tipo R possuem 3 endereços distintos para cada entrada do banco de registradores. Tendo isso em vista, a <b>Unidade de Controle</b> é o componente responsável por direcionar esses bits recebidos entre os demais componentes da arquitetura de acordo com o tipo da instrução, criando, assim, o caminho de dados correto.
                         </p>
                         <p>
                             Seu funcionamento depende apenas dos bits do código de operação. Como saída, ela gera 8 "sinais" que alteram o caminho de dados por meio de multiplexadores, estes são:
@@ -301,6 +317,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                 </div>
                 <div className="row py-4">
                     <div className="container-fluid d-flex justify-content-center align-items-center">
+                        {/* ---------------------------- TIPOS DE INSTRUÇÕES (R, I, J) ---------------------------- */}
                         <h1 id="instrucoes" className="mainSubjectTitle"> Tipos e conjuntos de instruções </h1>
                     </div>
                     <div className="container-fluid">
@@ -323,11 +340,12 @@ export default function Main() { // match é uma propriedade do react-router-dom
                 </div>
                 <div className="row py-4">
                     <div className="container-fluid d-flex justify-content-center align-items-center">
+                        {/* ---------------------------- CAMINHO DOS DADOS (DATAPATH) ---------------------------- */}
                         <h1 id="caminho_dados" className="mainSubjectTitle"> Caminho dos dados </h1>
                     </div>
                     <div className="container-fluid">
                         <p>
-                        Várias ações serão realizadas para qualquer instrução na arquitetura MIPS. Cada tipo de instrução realiza um conjunto de ações no caminho de dados. Porém, as duas primeiras etapas são idênticas para todas as instruções:
+                            Várias ações serão realizadas para qualquer instrução na arquitetura MIPS. Cada tipo de instrução realiza um conjunto de ações no <b>caminho de dados</b>. Porém, as duas primeiras etapas são idênticas para todas as instruções:
                         </p>
                         <ol className="pl-4">
                             <li>Buscar a instrução na memória usando a posição indicada pelo contador de programa (PC); </li>
@@ -340,28 +358,31 @@ export default function Main() { // match é uma propriedade do react-router-dom
                             Pensando em caminho de dados, vale ressaltar que os multiplexadores presentes são responsáveis por selecionar (de acordo com os sinais de controle) que dados serão repassados para os próximos componentes no circuito. Além disso, o clocking (já explicado) define quando é possível haver escrita e leitura de dados. 
                         </p>
                         <p>
-                            Além do contador de programa e da memória de instruções, que são usadas em todos os tipos de instruções, vale lembrar que instruções diferentes usam componentes diferentes. Para instruções do tipo R, a ULA e o Banco de Registradores são utilizados. Já para instruções <i>Load/Store</i> (do tipo I ou tipo R), são utilizados Banco de Registradores, ULA e Memória - podendo usar, também, uma unidade de deslocamento de bits (<i>sign-extension unit</i>).  Instruções de desvio (em geral, tipo J) usam Banco de Registradores, ULA, um somador para o possível desvio e uma <i>sign-extension unit</i>.
+                            Além do contador de programa e da memória de instruções, que são usadas em todos os tipos de instruções, vale lembrar que instruções diferentes usam componentes diferentes. Por exemplo, para instruções do tipo R, a ULA e o Banco de Registradores são utilizados. Já para instruções <i>Load/Store</i> (do tipo I ou tipo R), são utilizados Banco de Registradores, ULA e Memória - podendo usar, também, uma unidade de deslocamento de bits (<i>sign-extension unit</i>).  Instruções de desvio (em geral, tipo J) usam Banco de Registradores, ULA, um somador para o possível desvio e uma <i>sign-extension unit</i>.
                         </p>
                         <p>
                             Abaixo, é possível visualizar os caminhos de dados de algumas instruções comuns.
                         </p>
                     </div>
                     <div className="container-fluid mx-3 shadow">
-                        <div class="dropdown">
-                            <button class="datapathInstructionButton btn btn-secondary dropdown-toggle" type="button" id="datapathSelectionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div className="dropdown">
+                            <button className="datapathInstructionButton btn btn-secondary dropdown-toggle" type="button" id="datapathSelectionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Selecione uma instrução e veja seu caminho de dados
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="datapathSelectionButton">
-                                <button class="dropdown-item" onClick="">ADD (soma)</button>
-                                <button class="dropdown-item" href="#!">J (jump) </button>
-                                <button class="dropdown-item" href="#!">BEQ (branch if equal) </button>
+                            <div className="dropdown-menu" aria-labelledby="datapathSelectionButton">
+                                <button className="dropdown-item" onClick={() => setInstructionImageName("ADD")}>ADD (soma)</button>
+                                <button className="dropdown-item" onClick={() => setInstructionImageName("JUMP")}>J (jump) </button>
+                                <button className="dropdown-item" onClick={() => setInstructionImageName("BEQ")}>BEQ (branch if equal) </button>
                             </div>
                         </div>
                         <h3 className="pt-4 pb-2"> {instructionImageName} </h3>
                         <div className="d-flex justify-content-left my-3">
-                            <img src={listRegisters} className="img-fluid shadow rounded" alt="Lista de registradores a serem usados (MIPS)" /> 
+                            <img src={listRegisters} ref={datapathImageComponent} className="img-fluid shadow rounded" alt="Exemplo de caminho de dados" /> 
                         </div>
                     </div>
+                </div>
+                <div className="container-fluid text-center pb-4">
+                    <Link to="/bibliografia"><b> Acesse aqui a blibliografia utilizada para montar esse material </b></Link> 
                 </div>
             </div>
             <Footer />

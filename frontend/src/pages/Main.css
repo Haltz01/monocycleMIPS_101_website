@@ -42,7 +42,7 @@
     color: black;
     border: 0.5px solid black;
     cursor: pointer;
-    padding: 15px;
+    padding: 10px;
     font-size: 18px;
     transition-duration: 0.3s;
   }
@@ -63,4 +63,8 @@
 .datapathInstructionButton:hover {
     background-color: rgba(255, 219, 59, 0.979) !important;
     transition-duration: 0.3s;
+}
+
+a {
+    color: rgb(175, 149, 0);
 }

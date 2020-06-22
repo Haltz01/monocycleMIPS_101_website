@@ -23,9 +23,9 @@ export default function Navbar() {
                                         <span className="sr-only"> Tipos de arquitetura (CISC, RISC e MIPS) </span>
                                     </button>
                                 <div className="dropdownDiv dropdown-menu">
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Tipos de arquitetura </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> MIPS </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Clocking </ReactScroll.Link>
+                                    <ReactScroll.Link to="RISC_CISC" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> RISC e CISC </ReactScroll.Link>
+                                    <ReactScroll.Link to="MIPS" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> MIPS </ReactScroll.Link>
+                                    <ReactScroll.Link to="clocking" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Clocking </ReactScroll.Link>
                                 </div>
                             </div>
                         </li>
@@ -36,27 +36,17 @@ export default function Navbar() {
                                         <span className="sr-only"> Componentes da arquitetura MIPS </span>
                                     </button>
                                 <div className="dropdownDiv dropdown-menu">
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Banco de registradores </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Unidade lógico-aritmética </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Contador de programa </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Multiplexadores </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Memória </ReactScroll.Link>
-                                    <ReactScroll.Link to="" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Unidade de controle </ReactScroll.Link>
+                                    <ReactScroll.Link to="banco_regs" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Banco de registradores </ReactScroll.Link>
+                                    <ReactScroll.Link to="ULA" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Unidade lógico-aritmética </ReactScroll.Link>
+                                    <ReactScroll.Link to="program_counter" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Contador de programa </ReactScroll.Link>
+                                    <ReactScroll.Link to="multiplexers" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Multiplexadores </ReactScroll.Link>
+                                    <ReactScroll.Link to="data_memory" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Memória </ReactScroll.Link>
+                                    <ReactScroll.Link to="control_unit" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Unidade de controle </ReactScroll.Link>
                                 </div>
                             </div>
                         </li>
-                        <li className="navbarItem nav-item dropdown d-flex align-items-center p-1 p-lg-0">
-                            <div className="btn-group px-2">
-                                <ReactScroll.Link to="instrucoes" spy={true} smooth={true} duration={800} offset={-100} className="btn nav-link">Tipos e conjuntos de instruções</ReactScroll.Link>
-                                    <button type="button" className="btn dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span className="sr-only"> Tipos e conjuntos de instruções </span>
-                                    </button>
-                                <div className="dropdownDiv dropdown-menu">
-                                    <ReactScroll.Link to="instrucao_r" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Instrução R </ReactScroll.Link>
-                                    <ReactScroll.Link to="instrucao_i" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Instrução I </ReactScroll.Link>
-                                    <ReactScroll.Link to="instrucao_j" spy={true} smooth={true} duration={800} offset={-100} className="dropdownItem dropdown-item"> Instrução J </ReactScroll.Link>
-                                </div>
-                            </div>
+                        <li className="navbarItem nav-item d-flex align-items-center p-1 p-lg-0">
+                            <ReactScroll.Link to="instrucoes" spy={true} smooth={true} duration={800} offset={-100} className="btn nav-link">Tipos e conjuntos de instruções </ReactScroll.Link>
                         </li>
                         <li className="navbarItem nav-item d-flex align-items-center p-1 p-lg-0">
                             <ReactScroll.Link to="caminho_dados" spy={true} smooth={true} duration={800} offset={-100} className="btn nav-link">Caminho de dados</ReactScroll.Link>
