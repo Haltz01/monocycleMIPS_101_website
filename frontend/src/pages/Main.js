@@ -1,7 +1,7 @@
-import React from 'react'; // useEffect> para chamada a API assim que o componente for exibido na tela
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import ReactScroll from "react-scroll";
-// useState -> usado para ter váriaveis que vão ser manipuladas pelos componentes
+import $ from 'jquery';
 import './Main.css';
 
 import Navbar from './Navbar.js';
@@ -25,22 +25,44 @@ import listRegisters from '../assets/listRegisters.png';
 
 // import api from '../services/api';
 
-export default function Main({ match }) { // match é uma propriedade do react-router-dom -> tem os parametros passados para a rota. Ex.: {match.params.id}
+export default function Main() { // match é uma propriedade do react-router-dom -> tem os parametros passados para a rota. Ex.: {match.params.id}
+    const scrollTopRef = React.createRef();
+
+    const scrollTop = () => {
+        scrollTopRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+    }
+
+    /* Função que exibe e oculta o botão de voltar ao topo da página */
+    $(document).ready(function() {
+        function showScrollTopButton() {
+            if($(window).scrollTop() > 700) {
+                $('.scrollTopButton').removeClass("d-none");
+            }
+            else {
+                $('.scrollTopButton').addClass("d-none");
+            }
+        }
+        $(document).scroll(showScrollTopButton);
+        showScrollTopButton();
+    });
+
     return (
         <div>
             <Helmet>
                 <title> learn $MIPS; - Homepage </title>
                 <meta name="description" content="Esse é o nosso projeto final de Organização e arquitetura de computadores" />
-            </Helmet>
-            <Navbar />
+            </Helmet>          
+            <Navbar/>
+            <button id="scrollTopButton" className="scrollTopButton" onClick={scrollTop} title="Ir para o topo da página"> Voltar ao topo da página </button>
+            <span ref={scrollTopRef} />
             <div className="container bg-white">
-                {/* <Link to="/">
-                    <img src={logo} alt="TinDev Logo" />
-                </Link> */}
                 <div className="row">
-                    <div className="firstRowContainer container-fluid d-flex flex-column justify-content-center align-items-center py-4">
-                        <h1 className="mainTitle text-center"> Organização e arquitetura de computadores </h1>
-                        <h3 className="mainSubtitle w-75 text-center"> Aprenda aqui o básico sobre arquiteturas RISC, CISC e, em especial, <b>MIPS</b>. Cloking, componentes da arquitetura, caminho de dados, operações e mais! </h3>
+                    <div className="firstRowContainer container-fluid d-flex flex-column justify-content-center align-items-center py-5">
+                        <h1 className="mainTitle text-center py-4"> Organização e arquitetura de computadores </h1>
+                        <h3 className="mainSubtitle w-75 text-center py-4"> Aprenda aqui o básico sobre arquiteturas RISC, CISC e, em especial, <b>MIPS</b>. Cloking, componentes da arquitetura, caminho de dados, operações e mais! </h3>
                     </div>
                 </div>
                 <div className="row d-flex flex-row py-4">
@@ -81,7 +103,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                     <div className="container-fluid d-flex justify-content-center align-items-center">
                         <h1 id="tipos_arquitetura" className="mainSubjectTitle"> Tipos de arquitetura </h1>
                     </div>
-                    <div className="mainSubjectText container-fluid">
+                    <div className="container-fluid">
                         
                         {/* ---------------------------- ARQUITETURA MIPS (RISC) ---------------------------- */}
                         <h3> Arquitetura MIPS </h3>
@@ -122,7 +144,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                     <div className="container-fluid d-flex justify-content-center align-items-center">
                         <h1 id="componentes_MIPS" className="mainSubjectTitle"> Componentes da arquitetura MIPS </h1>
                     </div>
-                    <div className="mainSubjectText container-fluid d-flex flex-column justify-content-center">
+                    <div className="container-fluid d-flex flex-column justify-content-center">
                         {/* ---------------------------- BANCO DE REGISTRADORES ---------------------------- */}
                         <h3> Banco de Registradores </h3>
                         <p>
@@ -279,7 +301,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                     <div className="container-fluid d-flex justify-content-center align-items-center">
                         <h1 id="instrucoes" className="mainSubjectTitle"> Tipos e conjuntos de instruções </h1>
                     </div>
-                    <div className="mainSubjectText container-fluid">
+                    <div className="container-fluid">
                         <p>
                             Existem três <b>tipos de operações</b> a serem estudadas nessa linguagem. São elas: <i>R-format, I-format e J-format</i>. Cada operação é composta por 32 bits e apresenta um “padrão” de informação diferente nesses 4 bytes.
                         </p>
@@ -301,7 +323,7 @@ export default function Main({ match }) { // match é uma propriedade do react-r
                     <div className="container-fluid d-flex justify-content-center align-items-center">
                         <h1 id="caminho_dados" className="mainSubjectTitle"> Caminho dos dados </h1>
                     </div>
-                    <div className="mainSubjectText container-fluid">
+                    <div className="container-fluid">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur tortor vitae turpis pulvinar, et rutrum odio sagittis. Maecenas iaculis augue accumsan, scelerisque mauris eu, finibus mauris. Vivamus sagittis ut tortor eu sagittis. Proin elementum tellus eget nibh mattis, vitae euismod orci volutpat. Cras tempor, felis non vehicula cursus, neque velit tempor ligula, ac mollis lacus nibh id risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus eget magna a leo volutpat viverra. Mauris tristique ex in sem molestie feugiat.
                         </p>

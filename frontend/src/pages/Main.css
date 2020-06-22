@@ -31,6 +31,25 @@
     font-weight: 700;
 }
 
-.mainSubjectText {
-    
-}
+.scrollTopButton {
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none;
+    outline: none;
+    background-color: rgb(255, 226, 78);
+    color: black;
+    border: 0.5px solid black;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 18px;
+    transition-duration: 0.3s;
+  }
+  
+  .scrollTopButton:hover {
+    background-color: rgb(3, 3, 0);
+    border: 0.5px solid rgb(253, 222, 48);
+    color: rgb(253, 222, 48);
+    transition-duration: 0.3s;
+  }
