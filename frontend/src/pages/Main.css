@@ -53,3 +53,14 @@
     color: rgb(253, 222, 48);
     transition-duration: 0.3s;
   }
+
+.datapathInstructionButton {
+    background-color: white !important;
+    color: black !important;
+    transition-duration: 0.3s;
+}
+
+.datapathInstructionButton:hover {
+    background-color: rgba(255, 219, 59, 0.979) !important;
+    transition-duration: 0.3s;
+}

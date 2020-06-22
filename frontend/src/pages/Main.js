@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import ReactScroll from "react-scroll";
 import $ from 'jquery';
@@ -48,6 +48,8 @@ export default function Main() { // match é uma propriedade do react-router-dom
         $(document).scroll(showScrollTopButton);
         showScrollTopButton();
     });
+
+    const [instructionImageName, setInstructionImageName ] = useState("ADD");
 
     return (
         <div>
@@ -325,11 +327,40 @@ export default function Main() { // match é uma propriedade do react-router-dom
                     </div>
                     <div className="container-fluid">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur tortor vitae turpis pulvinar, et rutrum odio sagittis. Maecenas iaculis augue accumsan, scelerisque mauris eu, finibus mauris. Vivamus sagittis ut tortor eu sagittis. Proin elementum tellus eget nibh mattis, vitae euismod orci volutpat. Cras tempor, felis non vehicula cursus, neque velit tempor ligula, ac mollis lacus nibh id risus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus eget magna a leo volutpat viverra. Mauris tristique ex in sem molestie feugiat.
+                        Várias ações serão realizadas para qualquer instrução na arquitetura MIPS. Cada tipo de instrução realiza um conjunto de ações no caminho de dados. Porém, as duas primeiras etapas são idênticas para todas as instruções:
+                        </p>
+                        <ol className="pl-4">
+                            <li>Buscar a instrução na memória usando a posição indicada pelo contador de programa (PC); </li>
+                            <li>Ler os registradores indicados na instrução. </li>
+                        </ol>
+                        <p>
+                            Qualquer instrução pode (ou não) utilizar um ou mais componentes principais da arquitetura: memória de instruções, banco de registradores, ULA e memória de dados. 
                         </p>
                         <p>
-                            Aenean euismod tellus eget pellentesque maximus. Pellentesque vestibulum velit vel enim imperdiet, sit amet eleifend nisi imperdiet. Aliquam erat volutpat. Vestibulum vel ultricies urna. Duis ante justo, vehicula non rhoncus non, eleifend et sapien. Praesent in ipsum eget nulla varius dapibus. Suspendisse viverra sem erat, non tristique dui iaculis vitae. Maecenas risus risus, congue nec diam et, lacinia tempor dolor. Ut fringilla sed dui tincidunt scelerisque. Aenean placerat orci eu auctor mattis. Donec rhoncus libero sapien, vitae pharetra elit sagittis at. Ut fermentum condimentum ex, eu pharetra ante rhoncus non. Nunc dapibus velit in dui scelerisque, et molestie dolor imperdiet. Donec convallis luctus velit non lacinia.
+                            Pensando em caminho de dados, vale ressaltar que os multiplexadores presentes são responsáveis por selecionar (de acordo com os sinais de controle) que dados serão repassados para os próximos componentes no circuito. Além disso, o clocking (já explicado) define quando é possível haver escrita e leitura de dados. 
                         </p>
+                        <p>
+                            Além do contador de programa e da memória de instruções, que são usadas em todos os tipos de instruções, vale lembrar que instruções diferentes usam componentes diferentes. Para instruções do tipo R, a ULA e o Banco de Registradores são utilizados. Já para instruções <i>Load/Store</i> (do tipo I ou tipo R), são utilizados Banco de Registradores, ULA e Memória - podendo usar, também, uma unidade de deslocamento de bits (<i>sign-extension unit</i>).  Instruções de desvio (em geral, tipo J) usam Banco de Registradores, ULA, um somador para o possível desvio e uma <i>sign-extension unit</i>.
+                        </p>
+                        <p>
+                            Abaixo, é possível visualizar os caminhos de dados de algumas instruções comuns.
+                        </p>
+                    </div>
+                    <div className="container-fluid mx-3 shadow">
+                        <div class="dropdown">
+                            <button class="datapathInstructionButton btn btn-secondary dropdown-toggle" type="button" id="datapathSelectionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Selecione uma instrução e veja seu caminho de dados
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="datapathSelectionButton">
+                                <button class="dropdown-item" onClick="">ADD (soma)</button>
+                                <button class="dropdown-item" href="#!">J (jump) </button>
+                                <button class="dropdown-item" href="#!">BEQ (branch if equal) </button>
+                            </div>
+                        </div>
+                        <h3 className="pt-4 pb-2"> {instructionImageName} </h3>
+                        <div className="d-flex justify-content-left my-3">
+                            <img src={listRegisters} className="img-fluid shadow rounded" alt="Lista de registradores a serem usados (MIPS)" /> 
+                        </div>
                     </div>
                 </div>
             </div>
