@@ -8,7 +8,6 @@ import './Main.css';
 import Navbar from './Navbar.js';
 import Footer from './Footer.js';
 
-import testeImg from '../assets/teste.jpg';
 import bancoRegistradores from '../assets/bancoRegistradores.png';
 import bancoRegistradoresSimples from '../assets/bancoRegistradoresSimples.png';
 import buscaInstrucoes from '../assets/buscaInstrucoes.png';
@@ -22,6 +21,11 @@ import muxBase from '../assets/muxBase.png';
 import memoriaDados from '../assets/memoriaDados.png';
 import instructionComposition from '../assets/instructionComposition.png';
 import listRegisters from '../assets/listRegisters.png';
+
+import componentesCallImage from '../assets/componentesCallImage.png';
+import datapathCallImage from '../assets/datapathCallImage.png';
+import instrucoesCallImage from '../assets/instrucoesCallImage.png';
+import riscxciscCallImage from '../assets/riscxciscCallImage.png';
 
 
 // import api from '../services/api';
@@ -78,32 +82,32 @@ export default function Main() { // match é uma propriedade do react-router-dom
                 </div>
                 <div className="row d-flex flex-row py-4">
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="tipos_arquitetura" spy={true} smooth={true} duration={800} offset={-100} className=""> 
-                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
+                        <ReactScroll.Link to="tipos_arquitetura" spy={true} smooth={true} duration={800} offset={-100} className="d-flex flex-column justify-content-center align-items-center"> 
+                            <img src={riscxciscCallImage} className="callImage img-fluid shadow rounded w-100" alt="Imagem de teste" /> 
                             <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                                 Seja intruduzido a alguns <b>tipos de arquitetura</b> diferentes e aprenda, também, o básico sobre a arquitetura MIPS.
                             </div>
                         </ReactScroll.Link>
                     </div>
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="componentes_MIPS" spy={true} smooth={true} duration={800} offset={-100} className=""> 
-                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
+                        <ReactScroll.Link to="componentes_MIPS" spy={true} smooth={true} duration={800} offset={-100} className="d-flex flex-column justify-content-center align-items-center"> 
+                            <img src={componentesCallImage} className="callImage img-fluid shadow rounded w-100" alt="Imagem de teste" /> 
                             <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                                 Saiba mais sobre os principais <b>componentes da arquitetura MIPS</b>: banco de registradores, unidade de controle, unidade lógico-aritmética, memória...
                             </div>
                         </ReactScroll.Link>
                     </div>
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="instrucoes" spy={true} smooth={true} duration={800} offset={-100} className=""> 
-                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
+                        <ReactScroll.Link to="instrucoes" spy={true} smooth={true} duration={800} offset={-100} className="d-flex flex-column justify-content-center align-items-center"> 
+                            <img src={instrucoesCallImage} className="callImage img-fluid shadow rounded w-100" alt="Imagem de teste" /> 
                             <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                             Aprenda sobre os <b>tipos de instruções</b> usados no MIPS. Instruções do tipo I, J e R - junto de exemplos explicativos.
                             </div>
                         </ReactScroll.Link>
                     </div>
                     <div className="mainIcon col d-flex flex-column justify-content-top align-items-center">
-                        <ReactScroll.Link to="caminho_dados" spy={true} smooth={true} duration={800} offset={-100} className=""> 
-                            <img src={testeImg} className="img-fluid shadow rounded" alt="Imagem de teste" /> 
+                        <ReactScroll.Link to="caminho_dados" spy={true} smooth={true} duration={800} offset={-100} className="d-flex flex-column justify-content-center align-items-center"> 
+                            <img src={datapathCallImage} className="callImage img-fluid shadow rounded w-100" alt="Imagem de teste" /> 
                             <div className="mainIconsDescription container-fluid text-center p-0 mt-2 d-sm-none d-none d-md-block">
                                 Aprenda o <b>caminho dos dados</b> - incluindo sinais de controle - em instruções de todos os tipos a partir de exemplos!
                             </div>
@@ -367,7 +371,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                     <div className="container-fluid mx-3 shadow">
                         <div className="dropdown">
                             <button className="datapathInstructionButton btn btn-secondary dropdown-toggle" type="button" id="datapathSelectionButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Selecione uma instrução e veja seu caminho de dados
+                                Selecione uma instrução
                             </button>
                             <div className="dropdown-menu" aria-labelledby="datapathSelectionButton">
                                 <button className="dropdown-item" onClick={() => setInstructionImageName("ADD")}>ADD (soma)</button>

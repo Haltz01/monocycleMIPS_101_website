@@ -2,6 +2,10 @@
     background-color: rgba(253, 222, 48, 0.61);
 }
 
+.callImage {
+    max-width: 200px;
+}
+
 .mainTitle {
     font-weight: 900;
     font-size: 46px;
