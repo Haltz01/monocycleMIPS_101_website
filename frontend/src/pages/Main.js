@@ -72,7 +72,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
             <div className="container bg-white">
                 <div className="row">
                     <div className="firstRowContainer container-fluid d-flex flex-column justify-content-center align-items-center py-5">
-                        <h1 className="mainTitle text-center py-4"> Organização e arquitetura de computadores: MIPS monocliclo </h1>
+                        <h1 className="mainTitle text-center py-4"> Organização e arquitetura de computadores: MIPS monociclo </h1>
                         <h3 className="mainSubtitle w-75 text-center py-4"> Aprenda aqui o básico sobre arquiteturas RISC e CISC, com o foco em um tipo de arquitetura RISC: o <b>MIPS</b>. Seja introduzido a conceitos como cloking, componentes de arquitetura, caminho de dados, conjunto de instruções, sinais de controle e mais! </h3>
                     </div>
                 </div>
