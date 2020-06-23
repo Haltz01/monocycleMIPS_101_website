@@ -27,10 +27,7 @@ import datapathCallImage from '../assets/datapathCallImage.png';
 import instrucoesCallImage from '../assets/instrucoesCallImage.png';
 import riscxciscCallImage from '../assets/riscxciscCallImage.png';
 
-
-// import api from '../services/api';
-
-export default function Main() { // match é uma propriedade do react-router-dom -> tem os parametros passados para a rota. Ex.: {match.params.id}
+export default function Main() {
     const [instructionImageName, setInstructionImageName ] = useState("ADD");    
     
     const scrollTopRef = React.createRef();
@@ -125,7 +122,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                             A <b>arquitetura CISC</b> (<i>Complex Instruction Set Computer</i>) possui um grande número de modos de endereçamento, instruções complexas e referências a operandos na memória principal. Suas instruções também variam de tamanho, levando a uma maior dificuldade na implementação do pipeline e um menor número de instruções realizadas por ciclo.
                         </p>
                         <p>
-                        A <b>arquitetura RISC</b> (<i>Reduced Instruction Set Computer</i>) foi desenvolvida contando com instruções mais simples, poucas formas de endereçamento e apenas poucas operação referenciando a memória principal. Além disso, ela fixa os formatos de instruções em um modelo, permitindo a fácil implementação do pipeline.
+                            A <b>arquitetura RISC</b> (<i>Reduced Instruction Set Computer</i>) foi desenvolvida contando com instruções mais simples, poucas formas de endereçamento e apenas poucas operação referenciando a memória principal. Além disso, ela fixa os formatos de instruções em um modelo, permitindo a fácil implementação do pipeline.
                         </p>
                         {/* ---------------------------- ARQUITETURA MIPS (RISC) ---------------------------- */}
                         <h3 id="MIPS"> Arquitetura MIPS </h3>
@@ -338,7 +335,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                             <img src={listRegisters} className="img-fluid shadow rounded w-50" alt="Lista de registradores a serem usados (MIPS)" /> 
                         </div>
                         <p>
-                            <b>Shamt</b> é o valor para operações do tipo <i>shift</i> (deslocamento de bits). O <b>function</b> é necessário em instruções do tipo R para identificar as operações feitas na ULA - assim como faz o <i>operation code</i>. O <b>address</b> e o <b>target address</b> são ambos endereços, a diferença está em seus tamanhos. No caso das instruções do tipo J, ocorre uma operação de <i>shift</i> para poder escrever o endereço (aonde??), resultando em um valor que pode ser maior ao encontrado em instruções do tipo I. O <b>immediate</b> é usado para valores imediatos, ou seja, valores que não precisamos buscar em registradores -  ele é passado direto na instrução, como em li $t0, <b>100</b>.
+                            <b>Shamt</b> é o valor para operações do tipo <i>shift</i> (deslocamento de bits). O <b>function</b> é necessário em instruções do tipo R para identificar as operações feitas na ULA - assim como faz o <i>operation code</i>. O <b>address</b> e o <b>target address</b> são ambos endereços, a diferença está em seus tamanhos. O <b>immediate</b> é usado para valores imediatos, ou seja, valores que não precisamos buscar em registradores -  ele é passado direto na instrução, como em li $t0, <b>100</b>.
                         </p> 
                     </div>
                 </div>
@@ -381,7 +378,7 @@ export default function Main() { // match é uma propriedade do react-router-dom
                         </div>
                         <h3 className="pt-4 pb-2"> {instructionImageName} </h3>
                         <div className="d-flex justify-content-left my-3">
-                            <img src={listRegisters} ref={datapathImageComponent} className="img-fluid shadow rounded" alt="Exemplo de caminho de dados" /> 
+                            <img src="./ADD.jpg" ref={datapathImageComponent} className="img-fluid shadow rounded" alt="Exemplo de caminho de dados" /> 
                         </div>
                     </div>
                 </div>

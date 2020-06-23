@@ -24,16 +24,16 @@ export default function Footer() {
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Emails </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!">Lucas Yuji: </a>
+                            <span>Lucas Yuji: yuji.matubara@usp.br </span>
                         </li>
                         <li>
-                            <a href="#!">Pedro Guerra: pedro-x-guerra@hotmail.com</a>
+                            <span>Pedro Guerra: pedro-x-guerra@hotmail.com</span>
                         </li>
                         <li>
-                            <a href="#!">Pedro Cisdeli: </a>
+                            <span>Pedro Cisdeli: pedrohcsideli@usp.br</span>
                         </li>
                         <li>
-                            <a href="#!">Vitor Amim:</a>
+                            <span>Vitor Amim: vitoramim@usp.br</span>
                         </li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                     <h5 className="font-weight-bold text-uppercase mt-3 mb-4"> Githubs </h5>
                     <ul className="list-unstyled">
                         <li>
-                            <a href="#!" target="__blank">Lucas Yuji Matubara</a>
+                            <a href="https://github.com/YmLukeLY" target="__blank">Lucas Yuji Matubara</a>
                         </li>
                         <li>
                             <a href="https://github.com/Haltz01" target="__blank">Pedro Guerra Lourenço</a>
@@ -53,7 +53,7 @@ export default function Footer() {
                             <a href="https://github.com/sprmbng" target="__blank">Pedro Henrique M. Cisdeli</a>
                         </li>
                         <li>
-                            <a href="#!" target="__blank">Vitor Souza Amim</a>
+                            <a href="https://github.com/VitorAmim" target="__blank">Vitor Souza Amim</a>
                         </li>
                     </ul>
                 </div>
