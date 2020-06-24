@@ -133,10 +133,10 @@ export default function Main() {
                         {/* ---------------------------- ARQUITETURA MIPS (RISC) ---------------------------- */}
                         <h3 id="MIPS"> Arquitetura MIPS </h3>
                         <p>
-                            MIPS é o nome de uma arquitetura de processador baseado no uso de registradores. Suas instruções tem à disposição 32 registradores para realizarem operações. Os processadores MIPS são do formato RISC (Reduced Instruction Set Computer), que é conhecido por ter um pequeno conjunto de instruções possíveis para o processador executar. Alguns exemplos de projetos que utilizam arquitetura MIPS são: Nintendo 64, Playstation 2, e roteadores Cisco.
+                            MIPS é o nome de uma arquitetura de processador baseado no uso de registradores. Suas instruções tem à disposição 32 registradores para realizarem operações. Os processadores MIPS são do formato RISC (Reduced Instruction Set Computer), que é conhecido por ter um pequeno conjunto de instruções possíveis para o processador executar. Alguns exemplos de projetos que utilizam arquitetura MIPS são: Nintendo 64, Playstation 2 e roteadores Cisco.
                         </p>
                         <p>
-                            A arquitetura MIPS pode ser implementada de várias formas diferentes: monociclo, multiciclo ou pipelined. O monociclo, como já foi dito, trabalha com uma operação por ciclo, já o multiciclo ou o pipelined trabalham com múltiplas operações ao mesmo tempo. No multiciclo, a operação é dividida em várias partes menores, e no pipelined, além da operação ser dividida em partes menores, várias são as instruções executadas ao mesmo tempo.
+                            A arquitetura MIPS pode ser implementada de várias formas diferentes: monociclo, multiciclo ou <i>pipelined</i>. O monociclo, como já foi dito, trabalha com uma operação por ciclo, já o multiciclo ou o <i>pipelined</i> trabalham com múltiplas operações ao mesmo tempo. No multiciclo, a operação é dividida em várias partes menores, e no <i>pipelined</i>, além da operação ser dividida em partes menores, várias são as instruções executadas ao mesmo tempo.
                         </p>
 
                         {/* ---------------------------- CLOCKING ---------------------------- */}
@@ -204,7 +204,7 @@ export default function Main() {
                         {/* ---------------------------- PC - PROGRAM COUNTER ---------------------------- */}
                         <h3 id="program_counter">Contador de Programa</h3> 
                         <p>
-                            As instruções na arquitetura MIPS tem 32 bits (ou seja, 4 bytes), e como elas são organizadas sequencialmente na memória, o que ocorre é que após a interpretação de uma, basta andar 4 bytes na memória para começar a executar a próxima instrução. Tendo isso em vista, há o <b><i>Program Counter</i></b> (PC; contador de programa), responsável por indicar em que endereço de memória está a instrução atual, além de “andar” pela memória a fim de dar continuidade ao programa (indo para o endereço da próxima instrução que deve ser executada). O contador de programa é a unidade apresentada abaixo.
+                            As instruções na arquitetura MIPS tem 32 bits (ou seja, 4 bytes), e como elas são organizadas sequencialmente na memória, o que ocorre é que após a interpretação de uma, basta andar 4 bytes na memória para começar a executar a próxima instrução. Tendo isso em vista, há o <b><i>Program Counter</i></b> (PC; contador de programa), responsável por indicar em que endereço de memória está a instrução atual, além de “andar” pela memória a fim de dar continuidade ao programa (indo para o endereço da próxima instrução que deve ser executada). O contador de programa é a unidade apresentada abaixo (registrador de 32 bits).
                         </p>
                         <div className="d-flex justify-content-center my-3">
                             <img src={buscaInstrucoes} className="img-fluid shadow rounded w-50" alt="Busca de instruções: contador de programa e memória de instruções" /> 
