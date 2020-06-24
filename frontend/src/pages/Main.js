@@ -27,6 +27,10 @@ import datapathCallImage from '../assets/datapathCallImage.png';
 import instrucoesCallImage from '../assets/instrucoesCallImage.png';
 import riscxciscCallImage from '../assets/riscxciscCallImage.png';
 
+import ADD from '../assets/ADD.png'
+import JUMP from '../assets/JUMP.png'
+import BEQ from '../assets/BEQ.png'
+
 export default function Main() {
     const [instructionImageName, setInstructionImageName ] = useState("ADD");    
     
@@ -41,10 +45,12 @@ export default function Main() {
     }
 
     useEffect(() => {
-        if (instructionImageName === "ADD" || instructionImageName === "JUMP" || instructionImageName === "BEQ")
-            datapathImageComponent.current.src = "./" + instructionImageName + ".jpg";
-        else
-            datapathImageComponent.current.src = "./ADD.jpg";
+        if (instructionImageName === "ADD")
+            datapathImageComponent.current.src = ADD;
+        else if (instructionImageName === "BEQ")
+            datapathImageComponent.current.src = BEQ;
+        else if (instructionImageName === "JUMP")
+        datapathImageComponent.current.src = JUMP;
     }, [instructionImageName, datapathImageComponent]);
 
     /* Função que exibe e oculta o botão de voltar ao topo da página */
@@ -378,7 +384,7 @@ export default function Main() {
                         </div>
                         <h3 className="pt-4 pb-2"> {instructionImageName} </h3>
                         <div className="d-flex justify-content-left my-3">
-                            <img src="./ADD.jpg" ref={datapathImageComponent} className="img-fluid shadow rounded" alt="Exemplo de caminho de dados" /> 
+                            <img src={ADD} ref={datapathImageComponent} className="img-fluid shadow rounded" alt="Exemplo de caminho de dados" /> 
                         </div>
                     </div>
                 </div>
