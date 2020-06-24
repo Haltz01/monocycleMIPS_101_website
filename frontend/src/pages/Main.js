@@ -192,7 +192,6 @@ export default function Main() {
                         </p>
 
                         {/* ---------------------------- ULA - UNIDADE LÓGICO-ARITMÉTICA ---------------------------- */}
-                        {/* FAZER MODIFICAÇẼSS AQUI !!! */}
                         <h3 id="ULA">Unidade Lógica e Aritmética</h3> 
                         <p>
                             A <b>Unidade Lógica e Aritmética</b> (ULA ou, em inglês, ALU) é responsável pelas operações de soma, subtração, divisão, entre outros. De forma mais abrangente, ela é responsável por operações aritméticas e lógicas (no geral, comparações) como já demonstra seu nome. Possui dois valores de entrada e duas saídas (uma para o resultado da operação aritmética e outra para condições de desvio). Quando a operação enviada à ULA for de desvio, como um <i>branch</i> por exemplo, basta dizer se a condição foi satisfeita ou não. Para isso, existe a saída <i>Zero</i>, que assume o valor 1 caso a condição que está sendo avaliada for satisfeita e, caso contrário, assume valor 0.
@@ -238,7 +237,6 @@ export default function Main() {
                         </div>
 
                         {/* ---------------------------- UNIDADE DE CONTROLE ---------------------------- */}
-                        {/* FAZER MODIFICAÇÕES AQUI !!! */}
                         <h3 id="control_unit"> Unidade de controle (monociclo)</h3>
                         <p>
                             Uma instrução do tipo J não necessita da ULA; instruções do tipo I assinalam os mesmos bits de endereço em <i>read register 2</i> e <i>write register</i>; já as de tipo R possuem 3 endereços distintos para cada entrada do banco de registradores. Tendo isso em vista, a <b>Unidade de Controle</b> é o componente responsável por direcionar esses bits recebidos entre os demais componentes da arquitetura de acordo com o tipo da instrução, criando, assim, o caminho de dados correto.
