@@ -20,6 +20,13 @@ export default function Bibliografia() {
                             <li class="list-group-item"><a href="http://www.luiscaldas.com.br/unip/arquitetura/Notas%20de%20aulas/SDEC_aula_05_org.pdf">Arquitetura RISC x CISC – Prof. Luís Caldas 2017</a></li>
                             <li class="list-group-item"><a href="https://pt.wikipedia.org/wiki/CISC">CISC - Wikipedia</a></li>
                             <li class="list-group-item"><a href="https://ic.unicamp.br/~pannain/mc542/aulas/ch3_arq.pdf">Conjunto de instruções - MIPS</a></li>
+                            <li class="list-group-item"><a href="https://www.intel.com.br/content/www/br/pt/products/processors/core/i7-processors/i7-10700.html">Processador Intel® Core™ i7-10700 199316</a></li>
+                            <li class="list-group-item"><a href="https://canaltech.com.br/hardware/o-que-e-cpu/">O que é CPU?</a></li>
+                            <li class="list-group-item"><a href="https://www.infowester.com/processadores.php#clock">Processadores: clock, bits, memória cache e múltiplos núcleos</a></li>
+                            <li class="list-group-item"><a href="https://www.intel.com.br/content/www/br/pt/gaming/resources/cpu-clock-speed.html">O que é velocidade do clock da CPU? – Intel</a></li>
+                            <li class="list-group-item"><a href="http://ww2.inf.ufg.br/~fmc/orgcomp/Cap2.pdf">Organização do Processador - Parte A Capítulo 5 – Patterson & Hennessy</a></li>
+                            <li class="list-group-item"><a href="https://www.electronicwings.com/pic/pic18f4550-timer-capture">PIC18F4550 Timer Capture (CCP) mode</a></li>
+                            <li class="list-group-item"><a href="http://gr002115.blogspot.com/2018/03/processadores-monociclo-multiciclo-e.html">Aula 06 - Arquitetura Von Newmann</a></li>
                         </ul>
                     </div>
                     <div className="container-fluid text-center pb-4">
